@@ -1,0 +1,25 @@
+{
+  "name": "ndse10",
+  "version": "1.0.0",
+  "description": "Домашние задания по Node.js",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "random": "random"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Renzi0n/NDSE10.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Renzi0n/NDSE10/issues"
+  },
+  "homepage": "https://github.com/Renzi0n/NDSE10#readme"
+}
