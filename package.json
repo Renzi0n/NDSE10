@@ -10,6 +10,10 @@
     "eslint-plugin-prettier": "^4.0.0",
     "prettier": "^2.5.1"
   },
+  "bin": {
+    "index": "index",
+    "analyze": "analyze"
+  },
   "scripts": {
     "start": "node index.js"
   },
