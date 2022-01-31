@@ -16,4 +16,5 @@ module.exports = {
     'no-console': 'off',
     'no-plusplus': 'off',
   },
+  exclude: 'src/config.js',
 };
