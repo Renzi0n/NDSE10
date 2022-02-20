@@ -1,0 +1,96 @@
+===================================================1 задание===============================================================
+
+C:\Users\ander  
+λ docker run --name pinger -it busybox ping -c 7 netology.ru
+PING netology.ru (104.22.41.171): 56 data bytes
+64 bytes from 104.22.41.171: seq=0 ttl=37 time=5.849 ms
+64 bytes from 104.22.41.171: seq=1 ttl=37 time=6.355 ms
+64 bytes from 104.22.41.171: seq=2 ttl=37 time=6.307 ms
+64 bytes from 104.22.41.171: seq=3 ttl=37 time=7.055 ms
+64 bytes from 104.22.41.171: seq=4 ttl=37 time=6.509 ms
+64 bytes from 104.22.41.171: seq=5 ttl=37 time=6.184 ms
+64 bytes from 104.22.41.171: seq=6 ttl=37 time=6.325 ms  
+
+--- netology.ru ping statistics ---
+7 packets transmitted, 7 packets received, 0% packet loss
+round-trip min/avg/max = 5.849/6.369/7.055 ms
+
+C:\Users\ander  
+λ docker ps -a
+CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS                     PORTS     NAMES
+5286c2b59d8e   busybox   "ping -c 7 netology.…"   13 seconds ago   Exited (0) 6 seconds ago             pinger
+
+C:\Users\ander  
+λ docker logs pinger
+PING netology.ru (104.22.41.171): 56 data bytes
+64 bytes from 104.22.41.171: seq=0 ttl=37 time=5.849 ms
+64 bytes from 104.22.41.171: seq=1 ttl=37 time=6.355 ms
+64 bytes from 104.22.41.171: seq=2 ttl=37 time=6.307 ms
+64 bytes from 104.22.41.171: seq=3 ttl=37 time=7.055 ms
+64 bytes from 104.22.41.171: seq=4 ttl=37 time=6.509 ms
+64 bytes from 104.22.41.171: seq=5 ttl=37 time=6.184 ms
+64 bytes from 104.22.41.171: seq=6 ttl=37 time=6.325 ms
+
+--- netology.ru ping statistics ---
+7 packets transmitted, 7 packets received, 0% packet loss
+round-trip min/avg/max = 5.849/6.369/7.055 ms
+
+C:\Users\ander  
+λ docker start pinger
+pinger
+
+C:\Users\ander  
+λ docker ps -a
+CONTAINER ID   IMAGE     COMMAND                  CREATED              STATUS                      PORTS     NAMES
+5286c2b59d8e   busybox   "ping -c 7 netology.…"   About a minute ago   Exited (0) 42 seconds ago             pinger
+
+C:\Users\ander  
+λ docker logs pinger
+PING netology.ru (104.22.41.171): 56 data bytes
+64 bytes from 104.22.41.171: seq=0 ttl=37 time=5.849 ms
+64 bytes from 104.22.41.171: seq=1 ttl=37 time=6.355 ms
+64 bytes from 104.22.41.171: seq=2 ttl=37 time=6.307 ms
+64 bytes from 104.22.41.171: seq=3 ttl=37 time=7.055 ms
+64 bytes from 104.22.41.171: seq=4 ttl=37 time=6.509 ms
+64 bytes from 104.22.41.171: seq=5 ttl=37 time=6.184 ms
+64 bytes from 104.22.41.171: seq=6 ttl=37 time=6.325 ms
+
+--- netology.ru ping statistics ---
+7 packets transmitted, 7 packets received, 0% packet loss
+round-trip min/avg/max = 5.849/6.369/7.055 ms
+PING netology.ru (104.22.41.171): 56 data bytes
+64 bytes from 104.22.41.171: seq=0 ttl=37 time=5.902 ms
+64 bytes from 104.22.41.171: seq=1 ttl=37 time=6.435 ms
+64 bytes from 104.22.41.171: seq=2 ttl=37 time=6.373 ms
+64 bytes from 104.22.41.171: seq=3 ttl=37 time=5.951 ms
+64 bytes from 104.22.41.171: seq=4 ttl=37 time=6.058 ms
+64 bytes from 104.22.41.171: seq=5 ttl=37 time=6.507 ms
+64 bytes from 104.22.41.171: seq=6 ttl=37 time=6.747 ms
+
+--- netology.ru ping statistics ---
+7 packets transmitted, 7 packets received, 0% packet loss
+round-trip min/avg/max = 5.902/6.281/6.747 ms
+
+14 пакетов, 2 вызова
+
+C:\Users\ander  
+λ docker rm pinger
+pinger
+
+C:\Users\ander  
+λ docker ps -a                                                                                                                                                                                                                                                       
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+
+C:\Users\ander  
+λ docker image rm busybox
+Untagged: busybox:latest
+Untagged: busybox@sha256:afcc7f1ac1b49db317a7196c902e61c6c3c4607d63599ee1a82d702d249a0ccb
+Deleted: sha256:ec3f0931a6e6b6855d76b2d7b0be30e81860baccd891b2e243280bf1cd8ad710
+Deleted: sha256:d31505fd5050f6b96ca3268d1db58fc91ae561ddf14eaabc41d63ea2ef8c1c6d
+
+C:\Users\ander  
+λ docker image ls
+REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
+
+C:\Users\ander  
+λ 
