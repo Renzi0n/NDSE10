@@ -1,0 +1,73 @@
+===================================================================Задание 3======================================================
+
+C:\Users\ander  
+λ docker pull node:15.14
+15.14: Pulling from library/node
+bfde2ec33fbc: Pull complete
+787f5e2f1047: Pull complete
+7b6173a10eb8: Pull complete
+dc05be471d51: Pull complete
+55fab5cadd3c: Pull complete
+bd821d20ef8c: Pull complete
+6041b69671c6: Pull complete
+989c5d2d2313: Pull complete
+4b57d41e8391: Pull complete
+Digest: sha256:608bba799613b1ebf754034ae008849ba51e88b23271412427b76d60ae0d0627
+Status: Downloaded newer image for node:15.14
+docker.io/library/node:15.14
+
+C:\Users\ander  
+λ docker run --name first_node -i -t -d -v C:\Users\ander\data:/var/first/data node:15.14
+cc4b1279be6fce7b2a867972b50e4ceb842ea15c53f5b1a0c1690cd5f9a33366
+
+C:\Users\ander  
+λ docker run --name second_node -i -t -d -v C:\Users\ander\data:/var/second/data node:15.14
+654de23ede7ddef83b032f8a9b8b61e152c868eff6906584bb0771ff4bd36bef
+
+C:\Users\ander  
+λ docker exec -i -t first_node bin/sh
+# cd var/first/data
+# > newfile.txt
+# ls
+newfile.txt
+# exit
+
+C:\Users\ander  
+λ docker exec -i -t second_node bin/sh
+# cd var/second/data
+# >newfile2.txt
+# ls
+newfile.txt  newfile2.txt
+# exit
+
+C:\Users\ander  
+λ cd data
+
+C:\Users\ander\data  
+λ copy con host.txt
+hello
+
+
+Скопировано файлов:         1.
+
+C:\Users\ander\data  
+λ ls
+host.txt  newfile.txt  newfile2.txt
+
+C:\Users\ander\data  
+λ docker stop first_node
+first_node
+
+C:\Users\ander\data  
+λ 
+C:\Users\ander\data  
+λ docker stop second_node                                                                                                                                                                                                 
+second_node
+
+C:\Users\ander\data  
+λ docker rm first_node
+first_node
+
+C:\Users\ander\data  
+λ docker rm second_node
+second_node
