@@ -1,0 +1,16 @@
+1) db.books.insertMany([
+  {
+    title: "111",
+    description: "111",
+    authors: "111"
+  },
+  {
+    title: "222",
+    description: "222",
+    authors: "22"
+  }
+]);
+
+2) db.users.find( { title: "title-name" } );
+
+3) db.users.updateOne( { _id: 1 }, { $set: { description : "new", authors: "new author"} } );
